@@ -1,0 +1,394 @@
+/*************** CleanFox ***************/
+/**         Proton-based style         **/
+/**     Based on xmansyx's Pro-Fox     **/
+/** https://github.com/xmansyx/Pro-Fox **/
+/****************************************/
+
+
+/** Panel - View ************************************************************/
+
+:root #appMenu-popup panelview {
+  width: 25em !important;
+  /* can modify panel width, Original: 22.5em */
+}
+
+
+/** Panel - Icons ***********************************************************/
+
+
+/* Padding */
+
+:root {
+  --arrowpanel-menublank-padding: calc(var(--arrowpanel-menuicon-padding) * 2 + 8px) !important;
+  --arrowpanel-menuimageblank-padding: calc(var(--arrowpanel-menuitem-padding) - 2px) !important;
+  --urlbar-height: 45.6px !important;
+}
+
+#downloadsHistory .button-text,
+.subviewbutton>.toolbarbutton-text {
+  padding-inline-start: var(--arrowpanel-menuicon-padding) !important;
+}
+
+#panelMenu_bookmarksMenu .subviewbutton[disabled=true] .toolbarbutton-text,
+#appMenu_historyMenu .subviewbutton[disabled=true] .toolbarbutton-text {
+  padding-inline-start: var(--arrowpanel-menublank-padding) !important;
+}
+
+#appMenu-proton-update-banner .toolbarbutton-text {
+  margin-inline-start: 0 !important;
+}
+
+#appMenu-multiView .subviewbutton::before,
+#appMenu-proton-update-banner::before {
+  display: -moz-inline-box;
+  margin-inline-end: var(--arrowpanel-menuicon-padding);
+  width: 16px !important;
+  height: 16px !important;
+}
+
+#appMenu-proton-update-banner {
+  margin-bottom: 2px !important;
+}
+
+#appMenu-proton-update-banner::before {
+  margin-inline-start: var(--arrowpanel-menuitem-padding) !important;
+}
+
+#appMenu-fxa-status2,
+#appMenu-zoom-controls2 {
+  align-items: center;
+  padding-top: var(--arrowpanel-menuimageblank-padding) !important;
+  padding-bottom: var(--arrowpanel-menuimageblank-padding) !important;
+}
+
+#appMenu-zoom-controls2::before {
+  margin-inline-end: 0 !important;
+}
+
+
+/* Icons Color */
+
+#appMenu-multiView .subviewbutton::before,
+#appMenu-proton-update-banner::before,
+#downloadsHistory .button-icon,
+.subviewbutton>image {
+  fill: currentColor !important;
+  fill-opacity: var(--toolbarbutton-icon-fill-opacity) !important;
+  -moz-context-properties: fill !important;
+}
+
+
+/* Panel - Main */
+
+#appMenu-proton-addon-banners>.addon-banner-item>.toolbarbutton-icon {
+  display: -moz-inline-box !important;
+  margin-inline-start: var(--arrowpanel-menuicon-padding);
+  -moz-box-ordinal-group: 0 !important;
+}
+
+#appMenu-proton-update-banner::before {
+  content: url(chrome://browser/skin/whatsnew.svg);
+}
+
+#appMenu-fxa-status2::before {
+  /* Don't exist img tag */
+  content: url(chrome://browser/skin/fxa/avatar-empty.svg);
+}
+
+#appMenu-fxa-status2[fxastatus=signedin]::before {
+  /* Don't exist img tag */
+  display: none;
+}
+
+#appMenu-fxa-status2[fxastatus=signedin] #appMenu-fxa-label2::before {
+  /* url("https://profile.accounts.firefox.com/v1/avatar/a") */
+  content: '';
+  border-radius: 50% !important;
+  background-size: 16px !important;
+  background-image: var(--avatar-image-url) !important;
+  margin-right: 10px !important;
+}
+
+#appMenu-new-tab-button2 {
+  list-style-image: url(chrome://browser/skin/new-tab.svg);
+}
+
+#appMenu-new-window-button2 {
+  list-style-image: url(chrome://browser/skin/window.svg);
+}
+
+#appMenu-new-private-window-button2 {
+  list-style-image: url(chrome://browser/skin/privateBrowsing.svg);
+}
+
+#appMenu-bookmarks-button {
+  list-style-image: url(chrome://browser/skin/bookmark.svg);
+}
+
+#appMenu-history-button {
+  list-style-image: url(chrome://browser/skin/history.svg);
+}
+
+#appMenu-downloads-button {
+  list-style-image: url(chrome://browser/skin/downloads/downloads.svg);
+}
+
+#appMenu-passwords-button {
+  list-style-image: url(chrome://browser/skin/login.svg);
+}
+
+#appMenu-extensions-themes-button {
+  list-style-image: url(chrome://mozapps/skin/extensions/extension.svg);
+}
+
+#appMenu-print-button2 {
+  list-style-image: url(chrome://global/skin/icons/print.svg);
+}
+
+#appMenu-save-file-button2 {
+  list-style-image: url(chrome://browser/skin/save.svg);
+}
+
+#appMenu-find-button2 {
+  list-style-image: url(chrome://global/skin/icons/search-glass.svg);
+}
+
+#appMenu-zoom-controls2::before {
+  content: url(./icons/screenshot.svg);
+}
+
+#appMenu-settings-button {
+  list-style-image: url(chrome://global/skin/icons/settings.svg);
+}
+
+#appMenu-more-button2 {
+  list-style-image: url(chrome://browser/skin/ion.svg);
+}
+
+#appMenu-help-button2 {
+  list-style-image: url(chrome://global/skin/icons/help.svg);
+}
+
+#appMenu-quit-button2 {
+  list-style-image: url(chrome://browser/skin/quit.svg);
+}
+
+.subviewbutton>.toolbarbutton-icon {
+  margin-right: 10px !important;
+}
+
+
+/*================================== TABS ====================================*/
+
+
+/** Sound Tab - Show with Favicons ******************************************/
+
+
+/* Makes the favicons always visible (also on hover) */
+
+.tab-icon-image:not([pinned]) {
+  opacity: 1 !important;
+}
+
+
+/** Container Tab - Line at bottom *****************************/
+
+.tab-context-line {
+  display: none;
+}
+
+
+/*** Bottom of the tab ***/
+
+.tab-loading-burst {
+  border-bottom: 2px solid var(--identity-icon-color);
+}
+
+
+/*** Bottom of the title ***/
+
+
+/*.tab-label-container {
+  border-bottom: 2px solid var(--identity-icon-color);
+}*/
+
+
+/*================== URL BAR ==================*/
+
+#urlbar {
+  text-align: center !important;
+  --urlbar-height: 45.6px;
+}
+
+#urlbar-input[aria-expanded=true],
+#urlbar-input[aria-expanded=false]:focus {
+  text-align: left !important;
+}
+
+#urlbar[breakout][breakout-extend] {
+  top: 5px !important;
+  left: 0px !important;
+  width: 100% !important;
+  padding: 0px !important;
+}
+
+
+/* for alternate Density settings */
+
+[uidensity="compact"] #urlbar[breakout][breakout-extend] {
+  top: 3px !important;
+}
+
+[uidensity="touch"] #urlbar[breakout][breakout-extend] {
+  top: 4px !important;
+}
+
+
+/* Prevent shift of URL bar contents */
+
+#urlbar[breakout][breakout-extend]>#urlbar-input-container {
+  height: var(--urlbar-height) !important;
+  padding: 0 !important;
+}
+
+
+/* Do not animate */
+
+#urlbar[breakout][breakout-extend]>#urlbar-background {
+  animation: none !important;
+  ;
+}
+
+#navigator-toolbox {
+  padding-top: var(--uc-titlebar-padding, 0px) !important;
+  border-bottom: none;
+}
+
+:root {
+  --uc-titlebar-padding: 0px;
+}
+
+@media (-moz-os-version: windows-win10) {
+  :root[sizemode="maximized"][tabsintitlebar] {
+    --uc-titlebar-padding: 8px
+  }
+}
+
+#toolbar-menubar[autohide="true"]>.titlebar-buttonbox-container,
+#TabsToolbar>.titlebar-buttonbox-container {
+  position: fixed;
+  display: block;
+  top: var(--uc-titlebar-padding, 0px);
+  right: 0;
+  height: 40px;
+}
+
+
+/* Mac specific. You should set that font-smoothing pref to true if you are on any platform where window controls are on left */
+
+@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+  :root {
+    --uc-titlebar-padding: 0px !important
+  }
+  .titlebar-buttonbox-container {
+    left: 0;
+    right: unset !important;
+  }
+}
+
+:root[uidensity="compact"] #TabsToolbar>.titlebar-buttonbox-container {
+  height: 32px
+}
+
+#toolbar-menubar[inactive]>.titlebar-buttonbox-container {
+  opacity: 0
+}
+
+#navigator-toolbox {
+  padding-top: var(--uc-titlebar-padding, 0px) !important;
+}
+
+.titlebar-buttonbox-container>.titlebar-buttonbox {
+  height: 100%;
+}
+
+.urlbarView-url {
+  text-align: left !important;
+}
+
+menupopup menuseparator {
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  padding: 0px !important;
+  border-bottom: none !important;
+  opacity: 0.5 !important;
+}
+
+.menupopup-arrowscrollbox:not(.in-bookmarks-menu) {
+  padding: 6px 0 !important;
+}
+
+.toolbarbutton-text {
+  margin-left: 1px !important;
+}
+
+.toolbar-items {
+  background-color: var(--tabpanel-background-color) !important;
+  padding-left: 10px !important;
+}
+
+toolbar#nav-bar {
+  background-color: var(--tabpanel-background-color) !important;
+}
+
+.browser-toolbar:not(.titlebar-color) {
+  background-image: none !important;
+}
+
+#urlbar-results {
+  padding: 5px !important;
+}
+
+
+/* Remove space to left of toolbar  */
+
+.titlebar-spacer[type="pre-tabs"] {
+  display: none !important;
+}
+
+
+/* Customize window action buttons ( Close, Min, Max ) */
+
+.titlebar-button {
+  margin: 7px !important;
+  margin-left: 0 !important;
+  margin-right: 5px !important;
+  border-radius: 4px !important;
+}
+
+
+/* Apply dimmed background for inactive tabs */
+
+.tabbrowser-tab:hover>.tab-stack>.tab-background:not([selected], [multiselected]) {
+  background-color: color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.tabbrowser-tab>.tab-stack>.tab-background:not([selected], [multiselected]) {
+  background-color: color-mix(in srgb, currentColor 6%, transparent);
+}
+
+
+/* Make all tabs small except selected one */
+
+.tabbrowser-tab[fadein]:not([selected]):not([pinned]) {
+  max-width: 150px !important;
+  min-width: 150px !important;
+}
+
+
+/* Make selected tabs to bigger */
+
+.tabbrowser-tab[selected][fadein]:not([pinned]) {
+  max-width: 250px !important;
+  min-width: 250px !important;
+}
